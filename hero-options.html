@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대문 이미지 3가지 안</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{font-family:'Noto Sans KR',sans-serif;background:#f4f4f2;color:#24343a;word-break:keep-all}
+.label{max-width:1100px;margin:0 auto;padding:36px 20px 14px}
+.label b{display:inline-block;background:#24343a;color:#fff;border-radius:999px;padding:4px 16px;margin-right:10px}
+.label span{color:#66787e}
+.hero{position:relative;overflow:hidden;min-height:620px;display:flex;align-items:flex-start}
+.hero svg.art{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:2;max-width:1100px;width:100%;margin:0 auto;padding:84px 20px 0}
+.badge{display:inline-block;padding:6px 16px;border-radius:999px;font-size:.88rem;font-weight:500;margin-bottom:22px;background:rgba(255,255,255,.85);color:#1d8f7e}
+h1{font-family:'Gowun Batang',serif;font-size:clamp(2rem,5.2vw,3.3rem);line-height:1.3;font-weight:700}
+p.sub{margin-top:18px;max-width:480px;font-size:1.05rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{padding:13px 28px;border-radius:999px;font-weight:500;display:inline-block;text-decoration:none}
+/* A */
+.A{background:linear-gradient(180deg,#e8f7f3 0%,#f6fbf8 45%,#fffaf1 100%)}
+.A h1 em{font-style:normal;color:#1d8f7e}.A p.sub{color:#51666b}
+.A .p{background:#2BB5A0;color:#fff}.A .g{background:#fff;color:#1d8f7e;border:1px solid #2BB5A0}
+/* B */
+.B{background:#fbf6ea}
+.B h1{color:#2a2a2a}.B h1 em{font-style:normal;color:#b8423a}.B p.sub{color:#5a5650}
+.B .badge{background:rgba(255,255,255,.7);color:#b8423a}
+.B .p{background:#2a2a2a;color:#fff}.B .g{background:rgba(255,255,255,.7);color:#2a2a2a;border:1px solid #2a2a2a}
+/* C */
+.C{background:linear-gradient(180deg,#e6f6f3 0%,#fdf3e3 55%,#ffe9d2 100%)}
+.C h1 em{font-style:normal;color:#e0773f}.C p.sub{color:#5b6468}
+.C .p{background:#2BB5A0;color:#fff}.C .g{background:#fff;color:#1d8f7e;border:1px solid #2BB5A0}
+@media(max-width:700px){.hero{min-height:560px}.hero .wrap{padding-top:56px}}
+.foot{max-width:1100px;margin:0 auto;padding:30px 20px 60px;color:#66787e}
+</style>
+</head>
+<body>
+
+<!-- shared filters -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="mist"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+</svg>
+
+<!-- ========== A ========== -->
+<div class="label"><b>A안</b><span>맑은 아침 · 민트빛 수묵 산 + 은은한 해 (현재 홈페이지 색과 가장 잘 어울림)</span></div>
+<section class="hero A">
+  <svg class="art" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="sunA" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#fff3d6"/><stop offset=".6" stop-color="#ffe2b0"/><stop offset="1" stop-color="#ffe2b0" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="mA1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd0c4" stop-opacity=".55"/><stop offset="1" stop-color="#cfeee8" stop-opacity=".1"/></linearGradient>
+      <linearGradient id="mA2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fb9a6" stop-opacity=".65"/><stop offset="1" stop-color="#a9e2d8" stop-opacity=".15"/></linearGradient>
+      <linearGradient id="mA3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d8f7e" stop-opacity=".85"/><stop offset="1" stop-color="#2BB5A0" stop-opacity=".3"/></linearGradient>
+    </defs>
+    <circle cx="1060" cy="215" r="190" fill="url(#sunA)"/>
+    <circle cx="1060" cy="215" r="82" fill="#ffd9a0" opacity=".95"/>
+    <g filter="url(#ink)">
+      <path d="M0 400 C100 320 180 270 280 310 C360 342 420 240 520 215 C630 190 700 300 800 322 C900 344 980 255 1090 245 C1200 236 1330 310 1440 290 V620H0Z" fill="url(#mA1)"/>
+    </g>
+    <rect x="0" y="330" width="1440" height="120" fill="#fff" opacity=".55" filter="url(#mist)"/>
+    <g filter="url(#ink)">
+      <path d="M0 470 C140 400 240 360 350 410 C470 462 540 350 660 338 C790 326 860 430 990 420 C1110 410 1190 335 1310 352 C1380 362 1420 385 1440 395 V620H0Z" fill="url(#mA2)"/>
+    </g>
+    <rect x="0" y="430" width="1440" height="110" fill="#fff" opacity=".6" filter="url(#mist)"/>
+    <g filter="url(#ink)">
+      <path d="M0 560 C200 500 310 515 470 535 C630 555 760 495 910 512 C1050 528 1210 490 1440 540 V620H0Z" fill="url(#mA3)"/>
+    </g>
+    <g stroke="#1d8f7e" stroke-width="2" fill="none" opacity=".5" stroke-linecap="round">
+      <path d="M980 150c6-6 12-6 18 0 6-6 12-6 18 0"/><path d="M1130 110c5-5 10-5 15 0 5-5 10-5 15 0"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <span class="badge">부산 수영구 · 광안동</span>
+    <h1>몸과 마음이<br><em>가벼워지는 시간</em>,<br>광안동의보감한의원</h1>
+    <p class="sub">한 분 한 분의 몸 상태를 꼼꼼히 살피고, 편안하게 진료받으실 수 있도록 정성을 다하겠습니다.</p>
+    <div class="btns"><a class="btn p" href="#">전화 문의하기</a><a class="btn g" href="#">진료과목 보기</a></div>
+  </div>
+</section>
+
+<!-- ========== B ========== -->
+<div class="label"><b>B안</b><span>전통 수묵화 · 먹빛 봉우리 + 붉은 해와 학 (한의원 특유의 고풍스러운 느낌)</span></div>
+<section class="hero B">
+  <svg class="art" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="mB1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6d6d6a" stop-opacity=".45"/><stop offset="1" stop-color="#bdbdb8" stop-opacity=".05"/></linearGradient>
+      <linearGradient id="mB2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3b3a" stop-opacity=".7"/><stop offset="1" stop-color="#8d8d88" stop-opacity=".1"/></linearGradient>
+      <linearGradient id="mB3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f1f1e" stop-opacity=".92"/><stop offset="1" stop-color="#555" stop-opacity=".25"/></linearGradient>
+    </defs>
+    <circle cx="1010" cy="205" r="92" fill="#c9473e" opacity=".92" filter="url(#ink)"/>
+    <circle cx="1010" cy="205" r="120" fill="#c9473e" opacity=".12" filter="url(#soft)"/>
+    <g filter="url(#ink)">
+      <path d="M0 420 L90 330 L150 372 L260 250 L330 330 L400 290 L520 400 L640 300 L720 360 L830 270 L940 380 L1040 300 L1150 370 L1260 260 L1360 340 L1440 310 V620H0Z" fill="url(#mB1)"/>
+    </g>
+    <rect x="0" y="360" width="1440" height="120" fill="#fbf6ea" opacity=".75" filter="url(#mist)"/>
+    <g filter="url(#ink)">
+      <path d="M0 500 L110 420 L190 460 L330 340 L420 430 L520 400 L680 500 L800 390 L900 450 L1010 360 L1130 450 L1240 410 L1340 440 L1440 400 V620H0Z" fill="url(#mB2)"/>
+    </g>
+    <rect x="0" y="470" width="1440" height="100" fill="#fbf6ea" opacity=".8" filter="url(#mist)"/>
+    <g filter="url(#ink)">
+      <path d="M0 580 L140 520 L260 548 L420 500 L600 560 L760 520 L940 556 L1100 510 L1260 550 L1440 520 V620H0Z" fill="url(#mB3)"/>
+    </g>
+    <!-- 학 -->
+    <g fill="none" stroke="#2a2a2a" stroke-width="3" stroke-linecap="round" opacity=".8">
+      <path d="M820 130c14-14 28-14 42 0 14-14 28-14 42 0"/><path d="M900 98c10-10 20-10 30 0 10-10 20-10 30 0"/><path d="M770 170c8-8 16-8 24 0 8-8 16-8 24 0"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <span class="badge">부산 수영구 · 광안동</span>
+    <h1>몸과 마음이<br><em>가벼워지는 시간</em>,<br>광안동의보감한의원</h1>
+    <p class="sub">한 분 한 분의 몸 상태를 꼼꼼히 살피고, 편안하게 진료받으실 수 있도록 정성을 다하겠습니다.</p>
+    <div class="btns"><a class="btn p" href="#">전화 문의하기</a><a class="btn g" href="#">진료과목 보기</a></div>
+  </div>
+</section>
+
+<!-- ========== C ========== -->
+<div class="label"><b>C안</b><span>광안 바다의 일출 · 먼 산 + 바다 위 해와 윤슬 (광안리 지역성 + 가장 화사함)</span></div>
+<section class="hero C">
+  <svg class="art" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="sunC" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#fff0cf"/><stop offset=".55" stop-color="#ffd199"/><stop offset="1" stop-color="#ffd199" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="seaC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe9e2"/><stop offset="1" stop-color="#7fd0c4"/></linearGradient>
+      <linearGradient id="mC1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#58b9aa" stop-opacity=".6"/><stop offset="1" stop-color="#bfe9e2" stop-opacity=".1"/></linearGradient>
+      <linearGradient id="mC2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b9f8d" stop-opacity=".8"/><stop offset="1" stop-color="#6fcbbc" stop-opacity=".2"/></linearGradient>
+    </defs>
+    <circle cx="880" cy="360" r="230" fill="url(#sunC)"/>
+    <circle cx="880" cy="372" r="86" fill="#ffc98a"/>
+    <g filter="url(#ink)">
+      <path d="M0 400 C120 330 230 300 340 340 C440 376 500 330 590 345 C680 360 740 392 820 400 V430 H0Z" fill="url(#mC1)"/>
+      <path d="M1040 410 C1100 360 1180 330 1260 350 C1340 370 1400 340 1440 330 V430 H1040Z" fill="url(#mC1)"/>
+      <path d="M0 440 C140 380 220 392 330 410 C440 428 520 400 620 420 L640 440Z" fill="url(#mC2)"/>
+    </g>
+    <rect x="0" y="395" width="1440" height="60" fill="#fff" opacity=".6" filter="url(#mist)"/>
+    <!-- sea -->
+    <rect x="0" y="430" width="1440" height="190" fill="url(#seaC)"/>
+    <!-- sun glitter -->
+    <g stroke="#fff3d6" stroke-linecap="round" opacity=".9">
+      <line x1="820" y1="452" x2="940" y2="452" stroke-width="5"/>
+      <line x1="835" y1="472" x2="925" y2="472" stroke-width="4"/>
+      <line x1="800" y1="494" x2="950" y2="494" stroke-width="4"/>
+      <line x1="845" y1="518" x2="915" y2="518" stroke-width="3"/>
+      <line x1="815" y1="544" x2="945" y2="544" stroke-width="3"/>
+    </g>
+    <!-- waves -->
+    <g fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".7">
+      <path d="M60 500c20-12 40-12 60 0s40 12 60 0"/><path d="M260 560c20-12 40-12 60 0s40 12 60 0"/>
+      <path d="M1100 480c20-12 40-12 60 0s40 12 60 0"/><path d="M1240 560c20-12 40-12 60 0s40 12 60 0"/>
+      <path d="M560 530c20-12 40-12 60 0s40 12 60 0"/>
+    </g>
+    <!-- sailboat -->
+    <g transform="translate(1150 420)" fill="#fff" opacity=".95">
+      <path d="M0 40h60l-8 12H8z" fill="#e0773f"/><path d="M28 36V0l22 32z"/><path d="M24 36V8L8 36z" opacity=".8"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <span class="badge">부산 수영구 · 광안동</span>
+    <h1>몸과 마음이<br><em>가벼워지는 시간</em>,<br>광안동의보감한의원</h1>
+    <p class="sub">한 분 한 분의 몸 상태를 꼼꼼히 살피고, 편안하게 진료받으실 수 있도록 정성을 다하겠습니다.</p>
+    <div class="btns"><a class="btn p" href="#">전화 문의하기</a><a class="btn g" href="#">진료과목 보기</a></div>
+  </div>
+</section>
+
+<div class="foot">마음에 드는 안(A/B/C)과 수정하고 싶은 점(해 위치, 색감, 산의 높이 등)을 알려주세요. 선택한 안을 홈페이지 대문에 적용합니다.</div>
+</body>
+</html>

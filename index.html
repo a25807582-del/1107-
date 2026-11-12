@@ -32,23 +32,19 @@ nav a:hover{color:var(--mint-d)}
 .call:hover{background:var(--mint-d)}
 
 /* hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--mint-l) 0%,var(--sky) 55%,var(--cream) 100%);padding:90px 0 120px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#e8f7f3 0%,#f6fbf8 45%,#fffaf1 100%);min-height:640px;padding:84px 0 0}
+.hero .art{position:absolute;inset:0;width:100%;height:100%}
 .hero .wrap{position:relative;z-index:2}
 .badge{display:inline-block;background:#fff;color:var(--mint-d);padding:6px 16px;border-radius:999px;font-size:.88rem;font-weight:500;box-shadow:var(--shadow);margin-bottom:22px}
 .hero h1{font-family:'Gowun Batang',serif;font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.3;font-weight:700}
 .hero h1 em{font-style:normal;color:var(--mint-d)}
-.hero p{margin-top:20px;color:var(--muted);max-width:520px;font-size:1.05rem}
+.hero p{margin-top:20px;color:#51666b;max-width:520px;font-size:1.05rem}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .btn{padding:14px 28px;border-radius:999px;font-weight:500;transition:.2s;display:inline-block}
 .btn.primary{background:var(--mint);color:#fff;box-shadow:0 8px 20px rgba(43,181,160,.3)}
 .btn.primary:hover{background:var(--mint-d);transform:translateY(-2px)}
 .btn.ghost{background:#fff;color:var(--mint-d);border:1px solid var(--mint)}
 .btn.ghost:hover{background:var(--mint-l)}
-.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55}
-.b1{width:420px;height:420px;background:#c9efe8;right:-80px;top:-60px}
-.b2{width:240px;height:240px;background:#d7ecf7;right:180px;bottom:-90px}
-.leaf{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(34vw,340px);opacity:.9;z-index:1}
-.wave{position:absolute;bottom:-1px;left:0;width:100%;height:60px;z-index:2}
 
 /* sections */
 section{padding:84px 0}
@@ -116,8 +112,7 @@ footer p{line-height:1.9}
   .grid,.feat{grid-template-columns:1fr 1fr}
   .doc,.two,.addr{grid-template-columns:1fr}
   .photo{max-width:260px}
-  .leaf{display:none}
-  .hero{padding:60px 0 100px}
+  .hero{min-height:580px;padding-top:56px}
   section{padding:60px 0}
 }
 @media(max-width:560px){
@@ -148,14 +143,44 @@ footer p{line-height:1.9}
 
 <main id="top">
 <div class="hero">
-  <div class="blob b1"></div><div class="blob b2"></div>
-  <svg class="leaf" viewBox="0 0 300 300" fill="none" aria-hidden="true">
-    <path d="M150 280V130" stroke="#2BB5A0" stroke-width="5" stroke-linecap="round"/>
-    <path d="M150 130C150 60 100 25 30 25c0 70 45 105 120 105z" fill="#bfeae2" stroke="#2BB5A0" stroke-width="4"/>
-    <path d="M150 190c0-55 45-90 125-90 0 55-45 90-125 90z" fill="#d7f0ec" stroke="#2BB5A0" stroke-width="4"/>
-    <path d="M150 130C120 100 80 70 50 45M150 190c35-25 70-50 105-75" stroke="#2BB5A0" stroke-width="3" stroke-linecap="round"/>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="mist"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+</svg>
+  <svg class="art" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="sunA" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#fff3d6"/><stop offset=".6" stop-color="#ffe2b0"/><stop offset="1" stop-color="#ffe2b0" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="mA1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd0c4" stop-opacity=".55"/><stop offset="1" stop-color="#cfeee8" stop-opacity=".1"/></linearGradient>
+      <linearGradient id="mA2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fb9a6" stop-opacity=".65"/><stop offset="1" stop-color="#a9e2d8" stop-opacity=".15"/></linearGradient>
+      <linearGradient id="mA3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d8f7e" stop-opacity=".85"/><stop offset="1" stop-color="#2BB5A0" stop-opacity=".3"/></linearGradient>
+    </defs>
+    <circle cx="1060" cy="215" r="190" fill="url(#sunA)"/>
+    <circle cx="1060" cy="215" r="82" fill="#ffd9a0" opacity=".95"/>
+    <g filter="url(#ink)">
+      <path d="M0 400 C100 320 180 270 280 310 C360 342 420 240 520 215 C630 190 700 300 800 322 C900 344 980 255 1090 245 C1200 236 1330 310 1440 290 V620H0Z" fill="url(#mA1)"/>
+    </g>
+    <rect x="0" y="330" width="1440" height="120" fill="#fff" opacity=".55" filter="url(#mist)"/>
+    <g filter="url(#ink)">
+      <path d="M0 470 C140 400 240 360 350 410 C470 462 540 350 660 338 C790 326 860 430 990 420 C1110 410 1190 335 1310 352 C1380 362 1420 385 1440 395 V620H0Z" fill="url(#mA2)"/>
+    </g>
+    <rect x="0" y="430" width="1440" height="110" fill="#fff" opacity=".6" filter="url(#mist)"/>
+    <g filter="url(#ink)">
+      <path d="M0 560 C200 500 310 515 470 535 C630 555 760 495 910 512 C1050 528 1210 490 1440 540 V620H0Z" fill="url(#mA3)"/>
+    </g>
+    <g stroke="#1d8f7e" stroke-width="2" fill="none" opacity=".5" stroke-linecap="round">
+      <path d="M980 150c6-6 12-6 18 0 6-6 12-6 18 0"/><path d="M1130 110c5-5 10-5 15 0 5-5 10-5 15 0"/>
+    </g>
   </svg>
-  <div class="wrap">
+    <div class="wrap">
     <span class="badge">부산 수영구 · 광안동</span>
     <h1>몸과 마음이<br><em>가벼워지는 시간</em>,<br>광안동의보감한의원</h1>
     <p>한 분 한 분의 몸 상태를 꼼꼼히 살피고, 편안하게 진료받으실 수 있도록 정성을 다하겠습니다.</p>
@@ -164,7 +189,6 @@ footer p{line-height:1.9}
       <a class="btn ghost" href="#services">진료과목 보기</a>
     </div>
   </div>
-  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30C240 70 480 0 720 30s480 40 720 0V60H0z" fill="#fff"/></svg>
 </div>
 
 <section id="services">
