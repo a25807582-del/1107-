@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소화기 | 광안동의보감한의원</title>
+<meta name="description" content="소화기는 크게 식도, 위장, 소장, 대장으로 나뉘는데 제2의 뇌라고 불릴 정도로 소화기관은 자율신경의 지배를 받는 독립적인 기관입니다. 소화기는 인체의 대사에서 영양을 흡수하고 모든 장기에 영양분을">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+:root{
+  --mint:#1f4f4a; --mint-d:#14332f; --mint-l:#e7eeeb; --sky:#eef2ef; --cream:#f6f4ef;
+  --ink:#25292d; --muted:#5a6460; --line:#e2ded5; --white:#fff; --bg:#f6f4ef;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  --r:22px; --shadow:0 10px 30px rgba(20,51,47,.10);
+}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.75;font-size:17px;letter-spacing:-.01em;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+.serif{font-family:var(--sans)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:1.2rem;color:var(--mint-d)}
+.logo svg{width:28px;height:28px}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--mint-d)}
+.call{background:var(--mint);color:#fff;padding:8px 18px;border-radius:999px;font-weight:500;font-size:.95rem;white-space:nowrap;transition:.2s}
+.call:hover{background:var(--mint-d)}
+
+/* front layout (old site: sidebar left + slider/cards right) */
+#hero{padding:28px 0 0}
+#greeting{padding-top:34px}
+#front{padding:34px 0 10px}
+#clinics-sec{padding:34px 0 40px}
+.layout{display:grid;grid-template-columns:290px 1fr;gap:28px;align-items:start}
+.box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+aside{display:flex;flex-direction:column;gap:18px}
+.brand{text-align:center;background:linear-gradient(160deg,var(--mint-l),var(--sky));border:0}
+.brand .mark{width:54px;height:54px;margin:0 auto 8px;color:var(--mint-d)}
+.brand b{display:block;font-family:var(--sans);font-size:1.3rem;color:var(--mint-d)}
+.brand small{color:var(--muted)}
+.box h3{font-size:1.02rem;margin-bottom:6px;color:var(--mint-d)}
+.box p{color:var(--muted);font-size:.93rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:var(--mint-l);color:var(--mint-d);border-radius:999px;padding:5px 13px;font-size:.88rem;font-weight:500;transition:.2s}
+.chip:hover{background:var(--mint);color:#fff}
+.box.warm{background:var(--cream)}.box.warm h3{color:#8a5316}.box.warm .chip{background:#f6ecd5;color:#7a4a12}.box.warm .chip:hover{background:#8a5316;color:#fff}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;font-weight:500;transition:.2s;text-align:center}
+.btn.primary{background:var(--mint);color:#fff;box-shadow:0 8px 20px rgba(31,79,74,.28)}
+.btn.primary:hover{background:var(--mint-d);transform:translateY(-2px)}
+.hours-t{width:100%;font-size:.9rem;margin-top:8px;border-collapse:collapse}
+.hours-t td{padding:5px 0;border-bottom:1px dashed var(--line)}
+.hours-t tr:last-child td{border:0}
+.hours-t td:last-child{text-align:right;color:var(--muted)}
+.note{display:inline-block;margin-top:10px;font-size:.75rem;color:#7a4a12;background:#f6ecd5;padding:2px 9px;border-radius:8px}
+
+/* slider */
+.slider{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:#eee;aspect-ratio:2.1/1}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .8s}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block}
+.cap{position:absolute;left:22px;bottom:22px;max-width:min(78%,420px);background:rgba(255,255,255,.88);backdrop-filter:blur(6px);border-radius:18px;padding:14px 20px}
+.cap h2{font-family:var(--sans);font-size:clamp(1.15rem,2.6vw,1.65rem);line-height:1.35;color:var(--ink)}
+.cap p{font-size:.92rem;color:var(--mint-d);margin-top:2px}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.85);display:grid;place-items:center;font-size:1.3rem;color:var(--mint-d);z-index:3;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.arrow:hover{background:#fff}.prev{left:12px}.next{right:12px}
+.dots{position:absolute;right:18px;bottom:18px;display:flex;gap:8px;z-index:3}
+.dots button{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.15)}
+.dots button.on{background:var(--mint);width:26px;border-radius:999px}
+
+/* clinic cards */
+.sec-t{margin:38px 0 16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sec-t .eyebrow{color:var(--mint);font-weight:500;letter-spacing:.12em;font-size:.82rem}
+.sec-t h2{font-family:var(--sans);font-size:1.6rem}
+.fields{color:var(--muted);font-size:.93rem;margin-bottom:18px}
+.fields b{color:var(--mint-d);font-weight:500}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 12px 18px;text-align:center;transition:.25s;display:block;width:100%}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--mint)}
+.ico{width:78px;height:78px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;border:2px solid #d3d9d4;color:#8b9692;transition:.25s}
+.ico svg{width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.card:hover .ico{background:var(--mint-l);border-color:var(--mint);color:var(--mint-d)}
+.card h3{font-size:1rem;font-weight:500}
+.card small{display:block;color:var(--muted);font-size:.8rem;margin-top:2px;line-height:1.45}
+.card.cta{background:linear-gradient(160deg,var(--mint),#2f6b63);border:0;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.card.cta:hover{box-shadow:0 12px 28px rgba(31,79,74,.4)}
+.card.cta h3{font-size:1.05rem}.card.cta small{color:#dbe8e4}
+.card.cta .tel{font-family:var(--sans);font-size:1.25rem;font-weight:700;margin-top:6px}
+
+/* modal */
+dialog{border:0;border-radius:26px;padding:0;max-width:min(560px,92vw);width:100%;box-shadow:0 30px 80px rgba(0,0,0,.28);color:var(--ink)}
+dialog::backdrop{background:rgba(20,40,40,.45);backdrop-filter:blur(3px)}
+.m-head{background:linear-gradient(160deg,var(--mint-l),var(--sky));padding:28px 28px 20px;position:relative}
+.m-head h3{font-family:var(--sans);font-size:1.5rem;color:var(--mint-d)}
+.m-head p{color:var(--muted);margin-top:6px}
+.m-x{position:absolute;top:14px;right:16px;width:36px;height:36px;border-radius:50%;background:#fff;font-size:1.2rem;line-height:1}
+.m-body{padding:22px 28px 28px}
+.m-body ul{list-style:none;display:grid;gap:10px}
+.m-body li{position:relative;padding-left:22px}
+.m-body li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--mint)}
+.m-body li b{font-weight:500}
+.m-tip{margin-top:16px;background:var(--cream);border-radius:14px;padding:12px 16px;font-size:.9rem;color:#7a4a12}
+.m-foot{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* location */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.row{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid #e2ded5}
+.row b{min-width:64px;color:var(--mint-d)}
+.mapbox{border-radius:var(--r);background:linear-gradient(135deg,var(--mint-l),var(--sky));display:grid;place-items:center;min-height:240px;text-align:center;padding:24px}
+.mapbox svg{width:46px;height:46px;stroke:var(--mint-d);fill:none;stroke-width:1.8;margin-bottom:6px}
+.maplink{color:var(--mint-d);text-decoration:underline}
+
+
+/* 오시는 길: 큰 지도 + 정보 */
+.loc-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:32px;align-items:center;margin-top:24px}
+.map{border-radius:var(--r);overflow:hidden;aspect-ratio:2/1;background:var(--mint-l);box-shadow:var(--shadow)}
+.map{position:relative}
+.map-open{position:absolute;inset:0;display:block;cursor:zoom-in}
+.map-open span{position:absolute;right:12px;bottom:12px;background:#fff;color:var(--mint-d);font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.map-open:hover span{background:var(--mint);color:#fff}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.loc-info p{margin:0 0 12px;font-size:1.04rem;line-height:1.7}
+.loc-info strong{display:inline-block;min-width:3.4em;color:var(--mint-d);font-weight:700}
+.loc-info .loc-btn{margin:20px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.btn-naver{background:#03c75a!important;box-shadow:0 8px 20px rgba(3,199,90,.28)!important}
+.btn.ghost{background:#fff;color:var(--mint-d);border:1px solid var(--mint)}
+.btn.ghost:hover{background:var(--mint-l)}
+@media(max-width:860px){.loc-grid{grid-template-columns:1fr;gap:20px}.map{aspect-ratio:3/2}}
+
+
+/* 로고 (예전 타원 마크 + 글자) */
+.emb{height:17px;width:auto;display:block;mix-blend-mode:normal}
+.emb-lg{width:100%;max-width:65px;height:auto;display:block;margin:0 auto 8px;mix-blend-mode:normal}
+footer .logo{gap:12px;font-size:1.2rem}
+footer .logo{align-items:center}
+@media(max-width:640px){.emb{height:14px}}
+
+/* 원장 인사말 + 클리닉 안내 */
+#greeting{padding:34px 0 10px}
+.greet{display:grid;grid-template-columns:minmax(260px,400px) 1fr;gap:36px;align-items:center;background:linear-gradient(160deg,var(--mint-l),var(--sky));border-radius:28px;padding:36px}
+.greet-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:var(--mint-l)}
+.greet-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.greet-photo.is-sample::after{content:"※ 샘플 그림 — 실제 한의원 사진으로 교체 예정";position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.88);color:#7a4a12;font-size:.72rem;padding:3px 10px;border-radius:999px}
+.greet blockquote{font-family:var(--sans);font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.95;color:var(--ink);margin:10px 0 18px}
+.greet .sign{color:var(--muted)}
+.clinics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.clinic{display:block;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:.25s}
+.clinic:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--mint)}
+.clinic h3{font-size:1.05rem;color:var(--mint-d);margin-bottom:6px}
+.clinic p{font-size:.92rem;color:var(--muted);line-height:1.65}
+.clinic .go{display:inline-block;margin-top:10px;font-size:.85rem;color:var(--mint-d);font-weight:500}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,79,74,.55);border-color:var(--mint)}100%{box-shadow:0 0 0 18px rgba(31,79,74,0)}}
+.cards.flash .card{animation:pulse 1.1s ease-out 2;border-color:var(--mint)}
+@media(max-width:860px){.greet{grid-template-columns:1fr;padding:24px}.clinics{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.clinics{grid-template-columns:1fr}}
+
+
+/* Q&A */
+#faq{padding:60px 0 30px}
+.faq{display:grid;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 22px;transition:.2s}
+.faq details[open]{border-color:var(--mint);box-shadow:var(--shadow)}
+.faq summary{cursor:pointer;padding:17px 30px 17px 0;font-weight:600;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--mint);font-weight:800;margin-right:10px}
+.faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--mint)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:14px 0 18px;color:var(--muted);border-top:1px dashed var(--line)}
+.faq details p::before{content:"A";color:#8a5316;font-weight:800;margin-right:10px}
+
+
+/* 클리닉 안내 아래 보약·해독 */
+.clinic-extra{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:700px){.clinic-extra{grid-template-columns:1fr}}
+/* 하단: 한의원 정보(좌) + 오시는 길(우) */
+.foot-grid{display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,1.6fr);gap:44px;align-items:start}
+.foot-left .logo{font-size:1.3rem;margin-bottom:18px}
+footer .logo .emb{height:32px}
+.foot-left p{line-height:2.05;color:#b8c9c4}
+.foot-left p b{display:inline-block;min-width:3em;color:#fff;font-weight:600}
+.foot-left a{color:#fff}
+.foot-right h3{color:#fff;font-size:1.05rem;font-weight:600;margin-bottom:12px}
+.foot-right .map{box-shadow:none;border-radius:16px}
+footer .copy{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+
+
+/* Q&A 절반 폭 + 진료시간 */
+#faq{padding:40px 0 70px}
+.faq-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.faq{max-width:none}
+.hours-card{box-shadow:none}
+.hours-card h3{display:none}
+.hours-card .hours-t{font-size:1rem;margin-top:0}
+.hours-card .hours-t td{padding:11px 0}
+@media(max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:28px}}
+@media(max-width:640px){.slider{aspect-ratio:4/3}}
+
+footer{background:#14332f;color:#b8c9c4;padding:44px 0;font-size:.9rem}
+footer .logo{color:#fff;margin-bottom:12px}
+footer p{line-height:1.9}
+.copy{margin-top:18px;opacity:.6;font-size:.82rem}
+.fab{display:none}
+
+
+/* dropdown menu (예전 사이트 메뉴 구조) */
+.nav{position:relative}
+#gnav>ul{gap:6px}
+#gnav>ul>li{position:relative}
+#gnav .top{padding:21px 12px;font-size:.92rem;color:var(--muted);transition:.2s;white-space:nowrap}
+#gnav>ul>li:hover>.top,#gnav>ul>li:focus-within>.top{color:var(--mint-d)}
+#gnav .sub{position:absolute;top:100%;left:0;min-width:210px;max-height:78vh;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:8px;list-style:none;display:none;z-index:70}
+#gnav li:hover>.sub,#gnav li:focus-within>.sub{display:block}
+#gnav .sub a,#gnav .sub button{display:block;width:100%;text-align:left;padding:8px 12px;border-radius:10px;font-size:.9rem;color:var(--ink);white-space:nowrap}
+#gnav .sub a:hover,#gnav .sub button:hover{background:var(--mint-l);color:var(--mint-d)}
+#gnav .grp{font-size:1.02rem;color:#8a5316;padding:12px 12px 4px;font-weight:800;letter-spacing:0;border-top:1px solid var(--line);margin-top:6px}
+#gnav .sub>li.grp:first-child{border-top:0;margin-top:0}
+#gnav a.top{display:block}
+.burger{display:none;width:42px;height:42px;border-radius:12px;background:var(--mint-l);color:var(--mint-d);font-size:1.3rem}
+@media(max-width:1100px){
+  .burger{display:block}
+  #gnav{display:none;position:absolute;top:64px;left:-20px;right:-20px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(0,0,0,.08);max-height:80vh;overflow:auto;padding:8px 20px 16px}
+  #gnav.open{display:block}
+  #gnav>ul{flex-direction:column;gap:0}
+  #gnav .top{display:block;width:100%;text-align:left;padding:12px 4px;font-weight:700;color:var(--ink)}
+  #gnav .sub{position:static;display:none;border:0;box-shadow:none;max-height:none;padding:0 0 8px 10px}
+  #gnav li.open>.sub{display:block}
+  #gnav li:hover>.sub{display:none}
+  #gnav li.open:hover>.sub{display:block}
+}
+
+@media(max-width:960px){
+  .layout{grid-template-columns:1fr}
+  aside{display:grid;grid-template-columns:1fr 1fr;gap:16px;order:2}
+  .main{order:1}
+  .brand{grid-column:1/-1}
+  .cards{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:640px){
+  aside{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr}
+  .cap{left:10px;bottom:10px;padding:10px 14px}
+  .cap p{display:none}
+  .arrow{width:34px;height:34px}
+  .fab{display:block;position:fixed;bottom:16px;right:16px;z-index:60;background:var(--mint);color:#fff;padding:14px 22px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.2);font-weight:500}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slide{transition:none}}
+
+.pg-head{background:linear-gradient(160deg,var(--mint-l),var(--sky));padding:40px 0 30px}
+.crumb{font-size:.88rem;color:var(--muted);margin-bottom:10px}
+.crumb a{color:var(--mint-d)}
+.pg-head h1{font-family:var(--sans);font-size:clamp(1.6rem,4vw,2.3rem);color:var(--ink)}
+.pg{padding:34px 0 60px}
+.pg .wrap{max-width:860px}
+.content{font-size:1.02rem;line-height:1.9;color:var(--ink);overflow:hidden}
+.content p{margin:0 0 14px}
+.content h2{font-family:var(--sans);font-size:1.45rem;margin:34px 0 12px;padding-left:14px;border-left:5px solid var(--mint);color:var(--ink);clear:both}
+.content h3{font-size:1.15rem;margin:26px 0 8px;color:var(--mint-d);clear:both}
+.content h4{font-size:1.03rem;margin:20px 0 6px;color:var(--ink)}
+.content ul,.content ol{margin:0 0 16px 1.3em;display:block}
+.content li{margin:4px 0;list-style:inherit}
+.content ul{list-style:disc}.content ol{list-style:decimal}
+.content ul ul{list-style:circle;margin-bottom:6px}
+.content strong{font-weight:700;color:var(--ink)}
+.content img{max-width:100%;height:auto;border-radius:12px;display:block;margin:14px auto}
+.content img.alignright{float:right;margin:4px 0 12px 20px;max-width:42%}
+.content img.alignleft{float:left;margin:4px 20px 12px 0;max-width:42%}
+.tbl{overflow-x:auto;margin:14px 0 20px;border-radius:14px;border:1px solid var(--line)}
+.content table{border-collapse:collapse;width:100%;min-width:480px;font-size:.93rem;box-shadow:none;border-radius:0}
+.content th,.content td{border:1px solid var(--line);padding:9px 12px;vertical-align:top;text-align:left}
+.content th{background:var(--mint-l);color:var(--mint-d);font-weight:700}
+.callbar{margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:var(--mint-l);border-radius:16px;padding:14px 20px}
+.callbar span{color:var(--muted);font-size:.95rem}
+.callbar a{background:var(--mint);color:#fff;border-radius:999px;padding:8px 18px;font-weight:500;font-size:.95rem;white-space:nowrap}
+.callbar a:hover{background:var(--mint-d)}
+.callbar .btn-naver-s{background:#03c75a;margin-right:6px}
+.posts{margin:10px 0}
+.posts-empty{padding:40px 20px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:16px}
+.more{margin-top:34px}
+.more h3{font-size:.95rem;color:var(--muted);margin-bottom:10px;font-weight:500}
+.more .chip.on{background:var(--mint);color:#fff}
+a.chip{display:inline-block}
+@media(max-width:640px){.content img.alignright,.content img.alignleft{float:none;max-width:100%;margin:14px auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="../index.html" class="logo"><img class="emb" src="../images/emblem-t.png" alt="">광안동의보감한의원</a>
+    <nav id="gnav"><ul>
+      <li><button class="top">한의원 소개</button><ul class="sub">
+        <li><a href="../index.html#clinic">진료 안내</a></li>
+        <li><a href="../index.html#location">오시는 길</a></li>
+      </ul></li>
+      <li><button class="top">이명 · 안구건조</button><ul class="sub">
+        <li><a href="ear.html">이명 · 난청</a></li>
+        <li><a href="dryeye.html">안구건조</a></li>
+      </ul></li>
+      <li><button class="top">만성복합성통증 · 교통사고</button><ul class="sub">
+        <li><a href="painrule.html">통증의 치료 원칙</a></li>
+        <li><a href="align.html">신체정렬운동</a></li>
+        <li class="grp">만성복합성통증질환</li>
+        <li><a href="spine.html">척추질환</a></li>
+        <li><a href="joint-d.html">관절질환</a></li>
+        <li><a href="ligament.html">인대질환</a></li>
+        <li><a href="nerve.html">신경포착증후군</a></li>
+        <li><a href="vba.html">추골뇌저동맥증후군</a></li>
+        <li><a href="ra.html">류머티스성 관절염</a></li>
+        <li><a href="metabolic.html">대사성 통증 질환</a></li>
+        <li><a href="autoins.html">자동차보험치료</a></li>
+      </ul></li>
+      <li><button class="top">미병증 및 후유증</button><ul class="sub">
+        <li class="grp">미병증</li>
+        <li><a href="miby.html">미병증이란</a></li>
+        <li><a href="tonic.html">보강 및 회복(보약)</a></li>
+        <li><a href="lifecycle.html">생애주기별 보약</a></li>
+        <li><a href="season.html">계절별 보약</a></li>
+        <li><a href="organs.html">오장 허약에 따른 보약</a></li>
+        <li><a href="lifestyle.html">라이프스타일과 보약</a></li>
+        <li class="grp">후유증</li>
+        <li><a href="sequela.html">후유증이란</a></li>
+        <li><a href="surgery.html">수술후유증</a></li>
+        <li><a href="cold.html">감기후유증</a></li>
+        <li><a href="birth.html">출산후유증</a></li>
+        <li><a href="zoster.html">대상포진후유증</a></li>
+        <li><a href="stroke.html">중풍후유증</a></li>
+        <li><a href="traffic.html">교통사고후유증</a></li>
+      </ul></li>
+      <li><button class="top">해독 · 알레르기면역</button><ul class="sub">
+        <li class="grp">해독</li>
+        <li><a href="detox.html">해독이란</a></li>
+        <li><a href="bile.html">담즙분비촉진</a></li>
+        <li><a href="kidney.html">신장해독</a></li>
+        <li><a href="damjeok.html">담적</a></li>
+        <li><a href="vessel.html">혈관해독</a></li>
+        <li><a href="gut.html">장해독</a></li>
+        <li><a href="metsyn.html">대사증후군</a></li>
+        <li><a href="diet.html">다이어트</a></li>
+        <li><a href="aftercare.html">해독치료후 관리</a></li>
+        <li class="grp">알레르기면역질환</li>
+        <li><a href="allergy.html">알레르기면역질환</a></li>
+        <li><a href="atopy.html">아토피</a></li>
+        <li><a href="urticaria.html">두드러기</a></li>
+        <li><a href="cough.html">만성기침</a></li>
+        <li><a href="rhinitis.html">만성비염</a></li>
+      </ul></li>
+      <li><button class="top">치료법</button><ul class="sub">
+        <li><a href="gong.html">공진단</a></li>
+        <li><a href="herbal.html">발효한약</a></li>
+        <li><a href="basic.html">기본치료</a></li>
+        <li><a href="needle.html">약침치료</a></li>
+        <li><a href="special.html">특수치료</a></li>
+        <li><a href="joint.html">삼관절균형치료</a></li>
+      </ul></li>
+      <li><a class="top" href="health.html">건강이야기</a></li>
+    </ul></nav>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+<main>
+<section class="pg-head"><div class="wrap" style="max-width:860px">
+  <div class="crumb"><a href="../index.html">홈</a> › 생애주기별 보약 › 소화기</div>
+  <h1>소화기</h1>
+</div></section>
+<section class="pg"><div class="wrap">
+<div class="content">
+<p>소화기는 크게 식도, 위장, 소장, 대장으로 나뉘는데 제2의 뇌라고 불릴 정도로 소화기관은 자율신경의 지배를 받는 독립적인 기관입니다.</p>
+<p>소화기는 인체의 대사에서 영양을 흡수하고 모든 장기에 영양분을 공급하는 중요한 역할을 하고 있다고 보아 한의학에서 중앙토(土)의 위치를 부여하였습니다. 소화기능의 이상은 다른 장기의 기능이상과 밀접한 관련이 있습니다. 따라서, 어떤 질병이던지 소화기의 문제가 있으면 그와 연관된 상태에서 치료를 하고자 하는 것이 저희 광안동의보감한의원의 소화기질환 치료 관점입니다.</p>
+<p>또한, 각종 노폐물중 담음과 어혈이 소화기에 직접 쌓여서 병증을 일으키기도 하므로 소화기의 담적(痰積)을 제거하는 치료를 병행하기도 합니다.</p>
+<p><img class="" src="../images/pages/p-digestive-1.png" alt="" loading="lazy"></p>
+<h2>광안동의보감한의원 소화기질환 치료</h2>
+<ol><li><strong>한약</strong>: 소화기증상과 개개인의 몸상태에따른 맞춤처방을 합니다</li><li><strong>해독요법</strong>: 담적개선을 위한 해독치료입니다. 대변 소변을 원활하게하고 간과 장을 깨끗이합니다.</li><li><strong>침</strong>: 한의학의 원리에따른 소화기개선을 위한 침치료입니다.</li><li><strong>약침</strong>: 담적치료를 위한 약침, 위장관의 기능회복을 위한 약침을 치료를 합니다.</li><li><strong>왕뜸</strong>: 복부 경혈에 왕뜸을 하면 비위장 경락을 따뜻하게 합니다. 특히 냉증이 있는 경우 도움이 많이 됩니다</li></ol>
+<h2><strong>식생활주의사항</strong></h2>
+<h3><strong>(1) 권장하는 식사습관: 제시간에 제대로 먹기</strong></h3>
+<ol><li>식사는 5~6시간 간격을 두고 규칙적으로 하는 것이 좋다.</li><li>꼬로록하는 소리를 즐겨라. 특히 저녁에서 아침사이는 12시간이상 공복을 유지하는 것이 좋으며, 이때 노화방지 효소가 활동을 한다.</li><li>야식을 한 경우에는 아침을 쉬고 소화계에 휴식을 준다.</li><li>과일이나 효소가 풍부한 음식은 식전 20분전에 먹는 것이 좋다.</li><li>순서대로 먹자. 효소가 많은 음식(데친야채나 버섯류→ 식이섬유많은 야채나 과일)을 먼저 먹고, 효소가 적은 음식(고기→ 탄수화물)을 먹자.</li><li>단순하게 먹자. 잡곡밥은 5미 이내로 먹는 것이 좋다.</li><li>소화기가 약하다면 과일도 섞어 먹지 않도록 한다.</li><li>음식은 통째로 먹는 것이 좋다.(현미, 통밀가루등)</li><li>제철 채소, 과일등 자연식을 하자.</li><li>해조류, 콩류를 자주 먹자.</li></ol>
+<h3></h3>
+<h3></h3>
+<h3><strong>(2) 주의할 음식</strong></h3>
+<ol><li>밀가루음식: 혈당을 높임, 첨가물, 장점막을 예민하게 만듭니다. 세포의 당사슬을 불량하게 만들어 각종 알레르기, 면역약화 및 비만을 일으킵니다.</li><li>튀긴음식</li><li>우유: 단백질 소화효소 소모과다, 각종 알레르기의 원인</li><li>계란: 항생제, 성장촉진제등 다량. 자연　유정란은 괜찮다.</li><li>가공식품, 인스턴트식품(즉석식품, 냉동식품, 라면), 과자</li><li>찬음식류: 청량음료, 아이스크림</li><li>가공육류: 햄, 소시지. 튀기거나 구운 것은 더욱 좋지않다</li><li>술, 담배, 커피 등 기호식품</li></ol>
+<h3></h3>
+<h3></h3>
+<h3><strong>(3) 식습관교정</strong></h3>
+<ol><li>식사후 2~3시간이내에는 바로 눕지않는다</li><li>30~50번 씹어라 잘씹지 않으면 치매가능성도 높아진다.</li><li>식사중이나 식사직후 물을 많이 먹지 않는다</li><li>밥을 국이나 물에 말아먹지 않는다</li><li>찬음식을 먹지않는다 (맥주, 얼음물, 빙과류, 냉음료, 물냉면, 냉모밀등)</li><li>간식하지 않는다. 특히 속이 비었을때 사탕이나 청량음료를 많이 마시면 좋지 않다.</li></ol>
+<h2>주요 소화기 질환</h2>
+<h3>식도질환</h3>
+<p><strong>1.역류성식도염</strong>: 식도괄약근의 약화로 위산이 역류하여 식도점막의 자극증상이 나타나는 증상과 이와 관련된 합병증을 이릅니다. 이는 대표적으로 스트레스와 잘못된 식습관, 생활습관 등이 원인이 됩니다.</p>
+<ul><li><strong>인두부위 증상</strong>- 입냄새, 신물, 잦은 트림, 헛구역질, 목의 이물감, 인후두부의 불편감, 쉰목소리, 만성기침</li><li><strong>흉부증상</strong>- 가슴이 답답하고 속이 타는 듯 쓰리다, 명치의 답답함</li><li><strong>복부증상</strong>- 가스참, 소화불량, 복통</li></ul>
+<p><strong><br>2.식도기능장애</strong>: 식도기능장애는 종양이나 식도염 같은 병이 없이 식도근육이나 신경기능에 이상이 생겨서 음식물이 잘 내려가지 못하는 질환을 말합니다.</p>
+<p>역류성식도염과 마찬가지로 위식도기능의 정상화를 위한 치료를 진행하고 특히 분문과 유문의 경련을 없애고 연동운동이 잘 되게하는 한약치료를 합니다.</p>
+<p>증상</p>
+<ul><li>가슴통증</li><li>목의이물감</li><li>음식물을 삼키기힘듬</li><li>구토</li></ul>
+<h3>위장질환</h3>
+<p><strong>1.만성소화불량</strong></p>
+<p>반복되는 소화불량으로 식사시마다 체하고 답답하고 복부팽만감 속이 더부룩함 가스찬느낌 가슴답답함 명치부위의 통증 대변이 고르지못하고 변비또는 설사증상이 나타납니다.</p>
+<p><strong>2. 기능성소화불량(신경성소화불량)</strong></p>
+<p>내시경상 기질적인 이상은 없지만 지속적인 또는 재방설인 소화불량, 복부불편감이 발생하는 경우를 말합니다. 스트레스만 받으면 소화가 안되고 속이 불편한 경우가 많습니다.</p>
+<p>기능성 소화불량의  분류</p>
+<ul><li><strong>위운동장애성</strong>- 조금만 먹어도 포만감을 느끼거나 속이 더부룩하고 갑갑하다</li><li><strong>궤양유사증상성</strong>- 속이비면 쓰리고 아프다가 음식을 먹으면 가라앉는다</li><li><strong>역류성식도염유사증상성</strong>- 가슴에 열감이 느껴지고 신물이 올라온다</li></ul>
+<p>이중에 위운동장애성이 가장 많이 발생합니다.</p>
+<p><strong>3. 위하수 위무력</strong>: 위근육이 약해져서 탄력을 잃은 상태로 위의 운동기능에 장애가 생겨서 기능성 소화장애, 만성 소화불량의 원인이 됩니다.</p>
+<ul><li>속이 늘 불편하다</li><li>입맛이 없다</li><li>트림</li><li>가스,</li><li>더부룩함</li><li>위장에서 소리가난다(복명)</li><li>구토</li><li>미식거림</li><li>두통</li></ul>
+<p><strong>위하수: </strong>선천적, 식습관(과식) 무리한 다이어트, 노화 등으로 인해 발생합니다</p>
+<p><strong>위무력증: </strong>위의 운동기능이 떨어진 상태를 말하며 이는 위장으로 혈액공급이 잘 안되고 위장의 혈액순환에 문제가 생기게 됩니다. 이 때문에 적절한 소화액분비가 잘 안되 위산과다 또는 저산증 등으로 소화가 어렵게 됩니다. 특히, 식후 윗배가 많이 부풀어 있으며 답답함을 많이 느끼고,  트림을 자주 하며 자주 체합니다. 그외 체중감소, 변비 등의 증상을 호소합니다.</p>
+<p><strong>4. 담적(痰積)</strong>: 위와 장에 쌓이는 노폐물로 인해 위장이 정상보다 부어있고 단단해진 상태를 말하는 것으로 명치와 배꼽주변이 딱딱하게 느껴지고 만지면 아프기도 합니다. 담적병은 위와 장의 운동능력이 떨어져서 소화가 잘 안되고 복통, 구역감, 가스 등이 생기는 소화기 증상이외에 얼굴, 근육부위증상, 전신적증상을 유발하기도 합니다.</p>
+<ul><li><strong>소화기증상</strong>- 소화가 잘 안되고 복통, 구역감, 가스(방귀나 트림이 잦다). 속이 메스껍고 역류할때가 있다, 음식을 먹으면 자주 체한다, 대편이 편하지 않다</li><li><strong>안면부위증상</strong>- 눈이 침침하거나 뻑뻑하다, 다크써클이 있다, 입주변에 트러불이 자주 생기고 입냄새가 많다,  기미가 낀다</li><li><strong>근육부위증상</strong>- 뒷목, 어깨가 뻐근하다</li><li><strong>전신증상</strong>- 불면, 가슴이 답답하고 이유없이 불안하다, 손발이 붓거나 저리다</li></ul>
+<h3><strong>대장질환</strong></h3>
+<p><strong>1. 과민성대장</strong></p>
+<p>과민성대장증후군은 극심한 복부불편감과 설사,변비등이 교대로 반복적으로 나타나는 질환입니다. 정신적스트레스가 많은 분들에게 자주 발생합니다. 만성적인 경우 대장의 무력증과 예민하게 되어 작은 변화에도 예민하게 반응하게되며 꾸준한 치료가 필요합니다.</p>
+<p>증상</p>
+<ul><li>식후즉시 복통설사</li><li>설사와 변비의 반복</li><li>잔변감</li><li>스트레스시 복통</li><li>하루에 최소 2~5번이상 화장실에 간다</li><li>가스차고 속이 더부룩하다.</li><li>대변증상외에 두통, 미식거림, 가슴답답함, 소화불량, 가스차고 방귀가 자주나오는 등의 증상을 같이 동반하는 경우가 많습니다</li></ul>
+<p><strong>2. 만성설사</strong></p>
+<p>대변의 횟수나 양이 증가하고 수분이 증가되어 묽은 변을 보는 것을 말하는데 만성설사의 원인은 비위장기능의 저하, 노화로인한 신장기능저하, 스트레스, 만성피로 등이 있습니다.</p>
+<p>증상</p>
+<ul><li>묽은변을 하루에 3~4회이상 본다</li><li>식욕부진</li><li>소화불량</li><li>체중감소</li><li>수족냉증</li><li>만성피로</li></ul>
+<p><strong>3. 만성변비</strong></p>
+<p>배변이 원활하게 나오지 않는 증상으로 식사의 불규칙 물섭취의 부족, 대변습관의 불규칙, 노화, 운동부족 등으로 많이 발생하며 특히 여성들의 경우 다이어트, 스트레스가 원인이 되거나 임신, 생리중의 변화로 변비가 생기는 경우도 있습니다. 소화기능이 약화되면서 장운동전체의 기능저하가 있는 경우는 위장기능을 함께 개선하는 것이 좋습니다.</p>
+<p>증상</p>
+<ul><li>잔변감</li><li>주3회미만 대변</li><li>배변시 과도하게 힘을 줘야된다</li></ul>
+</div>
+<div class="callbar"><span>진료·상담 문의</span><span><a class="btn-naver-s" data-booking hidden>네이버 예약</a> <a href="tel:0517110575">☎ 051-711-0575</a></span></div>
+<div class="more"><h3>생애주기별 보약 다른 항목</h3><div class="chips" style="margin-top:0"><a class="chip" href="growth.html">성장</a><a class="chip" href="smart.html">총명</a><a class="chip" href="women.html">여성질환</a><a class="chip" href="fatigue.html">만성피로</a><a class="chip" href="menopause.html">갱년기</a><a class="chip on" href="digestive.html">소화기</a><a class="chip" href="antiaging.html">항노화</a></div>
+<p style="margin-top:22px"><a class="btn ghost" href="../index.html">← 홈으로</a></p></div>
+</div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="logo"><img class="emb" src="../images/emblem-t.png" alt="">광안동의보감한의원</div>
+    <p>부산광역시 수영구 수영로 606번길 128<br>TEL 051-711-0575</p>
+    <p class="copy">© 2026 광안동의보감한의원. All rights reserved. (샘플 페이지)</p>
+  </div>
+</footer>
+<script src="../booking.js"></script>
+<script src="../blog.js"></script>
+<script>
+(function(){
+  const nav=document.getElementById('gnav'),b=document.querySelector('.burger');
+  b.onclick=()=>{const o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o)};
+  nav.querySelectorAll('.top').forEach(t=>t.addEventListener('click',()=>t.parentElement.classList.toggle('open')));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+})();
+</script>
+</body>
+</html>
