@@ -1,0 +1,41 @@
+# 네이버 블로그(ydj1075) 「건강이야기」 새 글을 홈페이지 건강이야기 페이지에 자동 반영합니다.
+# 하루 4번(한국시간 7·12·17·22시) 확인하고, 바뀐 것이 있을 때만 커밋합니다.
+# Actions 탭에서 「Run workflow」로 바로 실행할 수도 있습니다.
+name: 블로그 글 자동 반영
+
+on:
+  schedule:
+    - cron: "0 22,3,8,13 * * *"  # UTC 기준 = 한국시간 07, 12, 17, 22시
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-blog
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 블로그 글 목록 갱신
+        run: python tools/update_blog.py
+
+      - name: 바뀐 것이 있으면 커밋·푸시
+        run: |
+          git add pages/health.html images/blog
+          if git diff --cached --quiet; then
+            echo "새 글 없음"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "건강이야기: 네이버 블로그 새 글 자동 반영"
+          git push
