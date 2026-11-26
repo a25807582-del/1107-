@@ -307,6 +307,15 @@ footer p{line-height:1.9}
 .callbar .btn-naver-s{background:#03c75a;margin-right:6px}
 .posts{margin:10px 0}
 .posts-empty{padding:40px 20px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:16px}
+.posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:18px}
+.post{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;color:var(--ink);transition:box-shadow .2s,transform .2s}
+.post:hover{box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-2px)}
+.post:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.post-thumb{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--mint-l)}
+.post-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px}
+.post time{font-size:.85rem;color:var(--muted)}
+.post h3{font-size:1.05rem;line-height:1.45;font-weight:700}
+.post p{font-size:.92rem;color:var(--muted);line-height:1.6}
 .more{margin-top:34px}
 .more h3{font-size:.95rem;color:var(--muted);margin-bottom:10px;font-weight:500}
 .more .chip.on{background:var(--mint);color:#fff}
@@ -395,7 +404,15 @@ a.chip{display:inline-block}
 </div></section>
 <section class="pg"><div class="wrap">
 <div class="content">
-<p>한의원에서 전하는 건강 정보를 네이버 블로그 글과 함께 소개합니다.</p><div class="posts" id="posts"><div class="posts-empty">글이 준비되는 대로 이곳에 표시됩니다.</div></div><p style="margin-top:22px"><a class="btn primary" data-blog hidden>네이버 블로그 바로가기</a></p>
+<p>한의원에서 전하는 건강 정보를 네이버 블로그 글과 함께 소개합니다.</p><div class="posts" id="posts">
+<!-- BLOG:START -->
+<a class="post" href="https://blog.naver.com/haniworkpro/224491116630" target="_blank" rel="noopener"><img class="post-thumb" src="../images/blog/224491116630.png" alt="" loading="lazy"><div class="post-body"><time datetime="2026-11-25">2026.11.25</time><h3>검사는 정상인데 속이 늘 더부룩하다면, 한의사는 무엇을 묻고 연구는 무엇을 말할까</h3><p>점심을 먹고 한 시간이 지났는데도 명치 아래가 꽉 막힌 듯합니다. 몇 숟갈 안 먹었는데 벌써 배가 부르고, 저녁이 되면 신물이 올라오기도 합니다. 병원에서 내시경…</p></div></a>
+<a class="post" href="https://blog.naver.com/haniworkpro/224484050224" target="_blank" rel="noopener"><img class="post-thumb" src="../images/blog/224484050224.png" alt="" loading="lazy"><div class="post-body"><time datetime="2026-11-19">2026.11.19</time><h3>불면에 한약 연구만 186편, 한의학은 잠을 몸 전체로 돌봅니다</h3><p>186편. 불면증에 한약을 쓴 무작위 대조시험을 모아 한꺼번에 분석한 2025년 연구에 들어간 논문의 수입니다. 침 연구도 24편이 모여 분석됐습니다. 연구가 이…</p></div></a>
+<a class="post" href="https://blog.naver.com/haniworkpro/224481846342" target="_blank" rel="noopener"><img class="post-thumb" src="../images/blog/224481846342.png" alt="" loading="lazy"><div class="post-body"><time datetime="2026-11-18">2026.11.18</time><h3>주름 하나가 아니라 얼굴 전체를 본다? 한의학이 말하는 건강한 아름다움</h3><p>거울을 보다가 문득 &quot;요즘 얼굴이 푸석해 보이네&quot; 싶은 날이 있습니다. 피부에 문제가 생겨서일까요, 아니면 요즘 잠을 못 자고 소화가 안 되고 마음이 지쳐서일까요…</p></div></a>
+<a class="post" href="https://blog.naver.com/haniworkpro/224480403843" target="_blank" rel="noopener"><img class="post-thumb" src="../images/blog/224480403843.png" alt="" loading="lazy"><div class="post-body"><time datetime="2026-11-17">2026.11.17</time><h3>만성피로, 한의학은 어떻게 접근할까? 논문으로 확인한 침·한약의 근거</h3><p>&quot;자도 자도 피곤하다&quot;, &quot;쉬어도 회복이 안 된다&quot;는 말, 주변에서 정말 자주 듣습니다. 이럴 때 한의원을 찾으시는 분도 많습니다. 오늘은 만성피로에 대한 침과…</p></div></a>
+<a class="post" href="https://blog.naver.com/haniworkpro/224477963331" target="_blank" rel="noopener"><img class="post-thumb" src="../images/blog/224477963331.png" alt="" loading="lazy"><div class="post-body"><time datetime="2026-11-15">2026.11.15</time><h3>항노화, 한의학은 어디까지 말할 수 있을까? 논문으로 살펴본 현실</h3><p>&quot;한약이 노화를 늦춘다&quot;는 말, 한 번쯤 들어보셨을 겁니다. 반대로 &quot;근거 없는 얘기&quot;라는 말도 듣습니다. 오늘은 둘 다 접어두고, 노화 연구에서 가장 영향력 있…</p></div></a>
+<!-- BLOG:END -->
+</div><p style="margin-top:22px"><a class="btn primary" data-blog hidden>네이버 블로그 바로가기</a></p>
 </div>
 <div class="callbar"><span>진료·상담 문의</span><span><a class="btn-naver-s" data-booking hidden>네이버 예약</a> <a href="tel:0517110575">☎ 051-711-0575</a></span></div>
 <div class="more">
